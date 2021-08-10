@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="sg.edu.rp.c347.id19023980.p13_taskmanagerwear">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.P13TaskManagerWear">
+        <activity
+            android:name=".ReplyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DeleteUpdateActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddActivity"
+            android:exported="true" />
+
+        <receiver
+            android:name=".ScheduledBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
