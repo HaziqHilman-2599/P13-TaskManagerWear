@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.RemoteInput;
@@ -23,6 +24,7 @@ public class ScheduledBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String name = intent.getExtras().getString("name");
         String description = intent.getExtras().getString("description");
+
         DBHelper dbh = new DBHelper(context);
         NotificationManager notificationManager = (NotificationManager)
                 context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -35,6 +37,7 @@ public class ScheduledBroadcastReceiver extends BroadcastReceiver {
             channel.setDescription("This is for default notification");
             notificationManager.createNotificationChannel(channel);
         }
+
         NotificationCompat.WearableExtender extender = new NotificationCompat.WearableExtender();
         Intent i = new Intent(context,AddActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity
